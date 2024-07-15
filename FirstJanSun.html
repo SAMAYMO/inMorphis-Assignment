@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Sundays on 1st January</title>
+</head>
+<body>
+    <h1>Years when 1st January is a Sunday</h1>
+    <p id="result"></p>
+
+    <script>
+        function findSundays() {
+            var result = [];
+            for (var year = 2014; year <= 2050; year++) {
+                var date = new Date(year, 0, 1); // January 1st of the given year
+                if (date.getDay() === 0) { // getDay() returns 0 for Sunday
+                    result.push(year);
+                }
+            }
+            return result;
+        }
+
+        // Get the result and display it
+        var years = findSundays();
+        document.getElementById('result').innerText = '1st January is a Sunday in the following years: ' + years.join(', ');
+    </script>
+</body>
+</html>

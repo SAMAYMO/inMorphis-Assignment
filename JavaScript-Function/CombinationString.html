@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Combinations Generator</title>
+</head>
+<body>
+    <h1>String Combinations Generator</h1>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+    <button onclick="generateCombinations()">Generate Combinations</button>
+    <p id="result"></p>
+
+    <script>
+        function generateCombinations() {
+            var str = document.getElementById('inputString').value;
+            var result = [];
+
+           
+            for (var i = 0; i < str.length; i++) {
+                for (var j = i + 1; j <= str.length; j++) {
+                    result.push(str.substring(i, j));
+                }
+            }
+
+          
+            document.getElementById('result').innerText = result.join(',');
+        }
+    </script>
+</body>
+</html>

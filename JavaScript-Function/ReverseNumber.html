@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a Number</title>
+</head>
+<body>
+    <h1>Reverse a Number</h1>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button onclick="reverseNumber()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseNumber() {
+            let number = document.getElementById('number').value; // Get the input number
+            let reversedNumber = ''; // Initialize a variable to store the reversed number
+
+            // Loop through each character of the number from end to start
+            for (let i = number.length - 1; i >= 0; i--) {
+                reversedNumber += number[i]; // Append each character to the reversedNumber string
+            }
+
+            // Display the reversed number in the result paragraph
+            document.getElementById('result').innerText = "Reversed Number: " + reversedNumber;
+        }
+    </script>
+</body>
+</html>
